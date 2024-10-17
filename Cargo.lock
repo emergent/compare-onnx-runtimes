@@ -115,6 +115,7 @@ name = "compare-onnx-runtimes"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "ndarray",
  "ort",
  "tract-onnx",
 ]
