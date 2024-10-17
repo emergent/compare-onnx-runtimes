@@ -1,0 +1,9 @@
+[package]
+name = "compare-onnx-runtimes"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.89"
+ort = "2.0.0-rc.6"
+tract-onnx = "0.21.7"
