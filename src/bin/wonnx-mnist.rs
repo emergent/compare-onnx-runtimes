@@ -1,4 +1,5 @@
 use std::collections::HashMap;
+use std::time::Instant;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -12,10 +13,27 @@ async fn main() -> anyhow::Result<()> {
         input_tensor.as_slice().unwrap().into(),
     );
 
+    let start = Instant::now();
     let session = wonnx::Session::from_path("models/mnist-opt.onnx").await?;
+    let end = start.elapsed();
 
     let outputs: HashMap<String, wonnx::utils::OutputTensor> = session.run(&inputs).await?;
     println!("{:?}", outputs);
+
+    let mut argmax = f32::MIN;
+    let mut ans = 0;
+    for x in outputs.into_values() {
+        let x: Vec<f32> = x.try_into()?;
+        for (j, y) in x.into_iter().enumerate() {
+            println!("{}: {}", j, y);
+            if y > argmax {
+                argmax = y;
+                ans = j;
+            }
+        }
+    }
+    println!("answer is {}", ans);
+    println!("time: {}.{:09}", end.as_secs(), end.subsec_nanos());
 
     Ok(())
 }

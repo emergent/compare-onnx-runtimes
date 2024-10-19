@@ -16,11 +16,11 @@ fn main() -> anyhow::Result<()> {
     let outputs = session.run(ort::inputs![input_tensor]?)?;
     let end = start.elapsed();
 
-    let tokens = outputs["Plus214_Output_0"].try_extract_tensor::<f32>()?;
-    println!("{}", tokens);
+    let outputs = outputs["Plus214_Output_0"].try_extract_tensor::<f32>()?;
+    println!("{}", outputs);
     let mut argmax = f32::MIN;
     let mut ans = 0;
-    for (i, x) in tokens.into_iter().enumerate() {
+    for (i, x) in outputs.into_iter().enumerate() {
         println!("{}: {}", i, x);
         if *x > argmax {
             argmax = *x;
