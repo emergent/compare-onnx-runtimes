@@ -1,3 +1,4 @@
+/// returns a 28x28 image of a digit
 pub fn mnist_input_image() -> Vec<f32> {
     vec![
         "0000000000000000000000000000",
