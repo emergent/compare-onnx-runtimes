@@ -10,7 +10,7 @@ fn main() -> anyhow::Result<()> {
     let session = ort::Session::builder()?
         .with_optimization_level(ort::GraphOptimizationLevel::Level1)?
         .with_intra_threads(4)?
-        .commit_from_file("models/mnist.onnx")?;
+        .commit_from_file("models/mnist-opt.onnx")?;
 
     let start = Instant::now();
     let outputs = session.run(ort::inputs![input_tensor]?)?;

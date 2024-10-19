@@ -2,7 +2,7 @@ use tract_onnx::prelude::*;
 
 fn main() -> anyhow::Result<()> {
     let model = tract_onnx::onnx()
-        .model_for_path("models/mnist.onnx")?
+        .model_for_path("models/mnist-opt.onnx")?
         .with_input_fact(0, f32::fact([1, 1, 28, 28]).into())?
         .incorporate()?
         .into_optimized()?
