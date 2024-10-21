@@ -9,6 +9,8 @@ burn = "0.14.0"
 burn-ndarray = "0.14.0"
 candle-core = "0.7.2"
 candle-onnx = "0.7.2"
+kn-graph = "0.7.3"
+kn-runtime = "0.7.3"
 ndarray = "0.16.1"
 ort = "2.0.0-rc.6"
 tokio = { version = "1.40.0", features = ["full"] }
