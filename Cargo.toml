@@ -5,6 +5,8 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.89"
+burn = "0.14.0"
+burn-ndarray = "0.14.0"
 candle-core = "0.7.2"
 candle-onnx = "0.7.2"
 ndarray = "0.16.1"
@@ -12,3 +14,6 @@ ort = "2.0.0-rc.6"
 tokio = { version = "1.40.0", features = ["full"] }
 tract-onnx = "0.21.7"
 wonnx = "0.5.1"
+
+[build-dependencies]
+burn-import = "0.14.0"

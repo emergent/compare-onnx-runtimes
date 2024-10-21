@@ -1,3 +1,7 @@
+// only for burn
+pub mod model;
+pub use model::mnist;
+
 /// returns a 28x28 image of a digit
 pub fn mnist_input_image() -> Vec<f32> {
     vec![
