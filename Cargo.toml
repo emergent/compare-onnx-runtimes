@@ -13,6 +13,8 @@ kn-graph = "0.7.3"
 kn-runtime = "0.7.3"
 ndarray = "0.16.1"
 ort = "2.0.0-rc.6"
+rten = "0.13.1"
+rten-tensor = "0.13.1"
 tokio = { version = "1.40.0", features = ["full"] }
 tract-onnx = "0.21.7"
 wonnx = "0.5.1"
